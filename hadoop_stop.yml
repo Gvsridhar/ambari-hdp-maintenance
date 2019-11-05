@@ -1,0 +1,6 @@
+---
+- name: Ambari APIs for HDP operations
+- hosts: ambari-server
+  tasks:
+  - name: Stop all Hadoop services
+    command: "sh /data/ambari_maint/ambari_api.sh stopall"

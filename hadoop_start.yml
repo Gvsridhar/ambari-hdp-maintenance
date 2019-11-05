@@ -1,0 +1,46 @@
+---
+- name: Use Ambari APIs for starting Hadoop services
+- hosts: ambari-server
+  tasks:
+
+  - name: Start Zookeer
+    command: "sh /data/ambari_maint/ambari_api.sh start zookeeper"
+
+  - name: Start Infra solr
+    command: "sh /data/ambari_maint/ambari_api.sh start ambari_infra-solr"
+
+  - name: Start Ranger
+    command: "sh /data/ambari_maint/ambari_api.sh start ranger"
+
+  - name: Start HDFS
+    command: "sh /data/ambari_maint/ambari_api.sh start hdfs"
+
+  - name: Start YARN
+    command: "sh /data/ambari_maint/ambari_api.sh start yarn"
+
+  - name: Start Mapreduce
+    command: "sh /data/ambari_maint/ambari_api.sh start mapreduce2"
+
+  - name: Start Hive
+    command: "sh /data/ambari_maint/ambari_api.sh start hive"
+
+  - name: Start NIFI
+    command: "sh /data/ambari_maint/ambari_api.sh start nifi"
+
+  - name: Start Knox
+    command: "sh /data/ambari_maint/ambari_api.sh start knox"
+
+  - name: Start Spark
+    command: "sh /data/ambari_maint/ambari_api.sh start spark2"
+
+  - name: Start Protegrity agents
+    command: "sh /data/ambari_maint/ambari_api.sh start bdppep"
+
+  - name: Start Protegrity certs
+    command: "sh /data/ambari_maint/ambari_api.sh start bdpcerts"
+
+  - name: Start Ambari metrics
+    command: "sh /data/ambari_maint/ambari_api.sh start ambari_metrics"
+
+  - name: Start Kafka
+    command: "sh /data/ambari_maint/ambari_api.sh start kafka"
